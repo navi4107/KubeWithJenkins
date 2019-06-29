@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: kubedemo
+spec:
+  replicas: 1
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: kubedemo
+      labels:
+        app: kubedemo
+    spec:
+      containers:
+      - name: kubedemo
+        image: avinash4107/kubedemoexample:0.1
+        ports:
+        - containerPort: 8080  
